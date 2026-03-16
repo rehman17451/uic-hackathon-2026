@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+@theme {
+  --color-primary-50: #f0fdf4;
+  --color-primary-100: #dcfce7;
+  --color-primary-500: #22c55e;
+  --color-primary-600: #16a34a;
+  --color-primary-700: #15803d;
+  
+  --color-trust-high: #22c55e;
+  --color-trust-med: #eab308;
+  --color-trust-low: #ef4444;
+}
+
+body {
+  @apply bg-gray-100 text-gray-900 antialiased;
+}
+
+/* Hide scrollbar for clean UI */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Clean up html5-qrcode scanner UI */
+#qr-reader video {
+  border-radius: 1rem;
+  object-fit: cover;
+}
+#qr-reader__scan_region {
+  min-height: auto !important;
+}
+#qr-reader__scan_region > img {
+  display: none !important;
+}
+#qr-reader__dashboard {
+  display: none !important;
+}
+#qr-shaded-region {
+  border: none !important;
+}
